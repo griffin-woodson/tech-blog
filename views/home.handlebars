@@ -1,0 +1,22 @@
+{{!-- Displays any posts if available --}}
+
+{{!-- if posts available --}}
+{{#if posts.length}}
+<section>
+    <h2>Blog Posts</h2>
+    <ol>
+        {{!-- makes card elements for each post --}}
+        {{#each posts as |post|}}
+        <li>
+            {{!-- uses the partial to display data for the post --}}
+            {{> postContents post}}
+        </li>
+        {{/each}}
+    </ol>
+</section>
+{{!-- display a note indicating no posts if none available --}}
+{{else}}
+<section>
+    <h2>No blog posts to be shown</h2>
+</section>
+{{/if}}
